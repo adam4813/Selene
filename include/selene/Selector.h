@@ -123,7 +123,7 @@ public:
         other._functor = nullptr;
     }
 
-    ~Selector() noexcept(false) {
+    ~Selector() {
         // If there is a functor is not empty, execute it and collect no args
         if (_functor) {
             _traverse();
