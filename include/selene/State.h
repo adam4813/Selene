@@ -99,6 +99,14 @@ public:
 #endif
     }
 
+    lua_State* GetState() {
+        return _l;
+    }
+
+    const lua_State* GetState() const {
+        return _l;
+    }
+
     void HandleExceptionsPrintingToStdOut() {
         *_exception_handler = ExceptionHandler([](int, std::string msg, std::exception_ptr){_print(msg);});
     }
